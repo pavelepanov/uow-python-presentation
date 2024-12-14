@@ -23,7 +23,7 @@ class UoWModel:
     """
 
     def __init__(self, model, uow):
-        self.__dict__['model'] = model
+        self.__dict__['_model'] = model
         self.__dict__['_uow'] = uow
 
     def __getattr__(self, key):
@@ -54,6 +54,7 @@ class UnitOfWork:
         model_id = id(model)
         if model_id in self.new:
             self.new.pop(model_id)
+            return
         self.deleted[model_id] = model
 
     def register_new(self, model):
