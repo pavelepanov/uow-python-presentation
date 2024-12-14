@@ -1,7 +1,7 @@
 from typing import cast
 
 from entity import User
-from uowed import DataMapper, UnitOfWork, UoWModel, ModelT
+from uowed import DataMapper, UnitOfWork, UoWModel
 
 
 class UserMapper(DataMapper[User]):

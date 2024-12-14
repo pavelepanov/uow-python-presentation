@@ -13,14 +13,3 @@ def interactor(uow: UnitOfWork, ugw: UserGateway) -> None:
     user3 = ugw.get_user(3)
     uow.register_deleted(user3)
     uow.commit()
-
-
-def main():
-    uow = UnitOfWork()
-    ugw = UserGateway(uow)
-    interactor(uow, ugw)
-
-
-if __name__ == '__main__':
-    main()
-
